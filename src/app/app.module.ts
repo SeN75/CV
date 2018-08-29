@@ -13,7 +13,7 @@ import { faTwitter , faGithub , faFacebookSquare , faInstagram, faTwitterSquare 
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
 import { SkilsComponent } from './skils/skils.component';
-import { SkilsDirective } from './skils.directive';
+import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 library.add(
           fas,
           far,
@@ -32,13 +32,14 @@ library.add(
     NavbarComponent,
     SocialMediaComponent,
     ContentComponent,
-    SkilsComponent,
-    SkilsDirective
+    SkilsComponent
+    
     ],
   imports: [
     BrowserModule,
     MatTabsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

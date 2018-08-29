@@ -1,14 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-
+import {SKIL} from "./arr-skils";
 @Component({
   selector: 'app-skils',
   templateUrl: './skils.component.html',
   styleUrls: ['./skils.component.css']
 })
 export class SkilsComponent implements OnInit {
-  Name = 'html';
-  Style = 100;
-  skil = [{name: this.Name, style: this.Style}];
+ skils = SKIL;
   constructor() { }
 
   ngOnInit() {
