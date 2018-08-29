@@ -1,0 +1,37 @@
+<div class="container margin-top-40">
+  <div class="row">
+      <div class="col col-sm-12 col-md-12 col-lg-2 col-xl-2 margin-top-5"><img [src]="MyLogo" class="Logo"alt="">
+      </div>
+    <div class="col margin-top-10 ">
+        <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link margin-left-right-16 tColor-0 font-size-15"
+              href="#"
+
+                [class.active]= "View == 'Aboutme'"
+                (click)="View ='Aboutme'"
+                >About Me</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link margin-left-right-16 font-size-15 tColor-0 "
+              href="#"
+              [class.active]="View == 'Experiences'"
+              (click)="View = 'Experiences'"
+              >Experiences</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link margin-left-right-16 font-size-15 tColor-0 " 
+              href="#"
+                 [class.active]="View == 'Skils'"
+                 (click)="View = 'Skils'">Skils
+                  <fa-icon [icon]="['fas', 'calendar']"></fa-icon>
+
+              </a>
+            </li>
+            <li class="nav-item font-size-20">
+            </li>
+          </ul>
+    </div>
+   
+  </div>
+</div>

@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~src/SeN-FM/SeN_FM.css";
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@font-face{
+    font-family: "Segoe";
+    src: url('./SeN-FM/segoepr.ttf');
+}
+body {
+ background-color: #242424;
+font-family: 'Segoe';
+}
+.tColor-0{
+    color: #fff
+}
+.enderLine-0{
+    height: 3px;
+    background: #fff;
+    transform: rotate(-2deg);
+
+}

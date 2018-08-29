@@ -1,0 +1,13 @@
+.content{
+    height: auto;
+    max-height: 400px;
+    min-height: 400px;
+    margin-left:20%;
+}
+li::before {content: "•"; color: white}
+li{
+    list-style-type: none;
+}
+ul{
+    padding-left: 10px;
+}

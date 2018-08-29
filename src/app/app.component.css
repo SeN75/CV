@@ -1,0 +1,13 @@
+.MyImg{
+    background:  #414141  ;
+    background-position: center;
+    background-image: url('../images/MyPic.jpeg') ;
+    background-size: cover;
+
+    height: 600px !important;
+}
+.background {
+    background: linear-gradient(142deg, rgb(0, 0, 0), #414141); 
+    border: 2px solid #414141;
+}
+
