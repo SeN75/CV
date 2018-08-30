@@ -1,7 +1,6 @@
 .content{
     height: auto;
-    max-height: 400px;
-    min-height: 400px;
+    min-height: 495px;
     margin-left:20%;
 }
 li::before {content: "•"; color: white}
