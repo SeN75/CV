@@ -33,15 +33,14 @@ library.add(
     SocialMediaComponent,
     ContentComponent,
     SkilsComponent
-    
     ],
   imports: [
     BrowserModule,
     MatTabsModule,
     FontAwesomeModule,
-    FormsModule
+    FormsModule,
   ],
-  providers: [],
+  providers: [NavbarComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

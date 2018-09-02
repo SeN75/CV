@@ -1,7 +1,8 @@
-<div class="content">
-  <div #AboutMe >
+<div >
+<div class="content" [ngSwitch] = "view">
+  <div   *ngSwitchCase="'Aboutme'">
     <div class="font-size-22 tColor-0 margin-top-60">
-      Hello There I'm
+      Hello There I'm 
     </div>
     <div class="enderLine-0" style="width: 130px">
 
@@ -31,7 +32,7 @@
     </ul>
 
   </div>
-  <div #Experince hidden>
+  <div  *ngSwitchCase="'Experiences'">
     <div class="font-size-22 tColor-0 margin-top-60">
       My experinces
     </div>
@@ -80,7 +81,7 @@
       </ul>
     </div>
   </div>
-  <div #Skils hidden>
+  <div  *ngSwitchCase="'Skils'">
     <div class="font-size-22 tColor-0 margin-top-60">
       My Skils
     </div>
@@ -89,4 +90,5 @@
     </div>
     <app-skils></app-skils>
   </div>
+</div>
 </div>

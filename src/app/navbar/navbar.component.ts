@@ -10,8 +10,10 @@ export class NavbarComponent implements OnInit {
   View = 'Aboutme';
   constructor() {
     this.MyLogo = 'src/images/Logo.png';
+    console.log(this.View);
   }
   ngOnInit() {
   }
+
 
 }
