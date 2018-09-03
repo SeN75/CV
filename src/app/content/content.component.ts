@@ -1,5 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { NavbarComponent } from '../navbar/navbar.component';
+import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-content',
   templateUrl: './content.component.html',
@@ -7,10 +6,7 @@ import { NavbarComponent } from '../navbar/navbar.component';
 })
 
 export class ContentComponent implements OnInit {
-view: string;
-  constructor(navbar: NavbarComponent) {
-    this.view = navbar.View;
-    console.log(this.view);
+  constructor() {
    }
   ngOnInit() {
   }

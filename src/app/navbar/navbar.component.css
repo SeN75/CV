@@ -6,7 +6,7 @@
 .mat-tab-label{
     color: white;
 }
-.nav-link.active.tColor-0{
+.nav-link.active.tColor-0 {
 transition: 500ms;
     border-bottom:3px solid #fff;
 }
@@ -20,4 +20,5 @@ transition: 500ms;
 .nav-link.margin-left-right-16{
     padding:0!important;
     margin: 0 16px;
+   
 }

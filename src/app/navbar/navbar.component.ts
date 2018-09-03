@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {nav} from './nav-bar';
 
 @Component({
   selector: 'app-navbar',
@@ -7,13 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
   MyLogo: string;
-  View = 'Aboutme';
   constructor() {
     this.MyLogo = 'src/images/Logo.png';
-    console.log(this.View);
   }
   ngOnInit() {
   }
-
 
 }
