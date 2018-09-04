@@ -8,6 +8,7 @@ import {nav} from './nav-bar';
 })
 export class NavbarComponent implements OnInit {
   MyLogo: string;
+  navbar = nav ;
   constructor() {
     this.MyLogo = 'src/images/Logo.png';
   }

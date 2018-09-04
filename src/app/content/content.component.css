@@ -1,7 +1,6 @@
 .content{
     height: auto;
     min-height: 495px;
-    margin-left:20%;
 }
 li::before {content: "•"; color: white}
 li{
@@ -9,4 +8,25 @@ li{
 }
 ul{
     padding-left: 10px;
+}
+
+@media screen and (min-width:320px)  {
+.content{
+    margin-left: 8%;
+ } 
+}
+@media screen and (min-width:768px) {
+.content{
+    margin-left: 10%;
+ } 
+}
+@media screen and (min-width:992px) {
+.content{
+    margin-left: 20%;
+ } 
+}
+@media screen and (min-width:1200px) {
+.content{
+    margin-left: 20%;
+ } 
 }

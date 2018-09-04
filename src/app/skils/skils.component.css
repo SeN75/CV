@@ -3,7 +3,7 @@
     background: #fff;
 }
 
-@media screen and (min-width:576px) {
+@media screen and (min-width:320px) {
     .width-100{
         width: 200px;
     }
