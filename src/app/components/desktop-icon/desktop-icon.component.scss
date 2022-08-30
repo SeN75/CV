@@ -1,0 +1,20 @@
+div {
+  @apply max-w-[100px] w-full h-auto my-2 p-1;
+  @apply flex flex-col items-center justify-center;
+  &:active {
+    @apply border-solid border-[3px] border-c3;
+    cursor: url(../../../assets/img/click.png), auto;
+  }
+  &:hover {
+  }
+  & img {
+    @apply block m-auto w-[70%] h-auto;
+  }
+  & p {
+    @apply text-c1 font-f1 text-center text-[1.2rem];
+  }
+}
+
+nav {
+  @apply px-4;
+}
