@@ -1,0 +1,70 @@
+.tools_canvas {
+  @apply flex flex-1 h-[90%];
+
+  & img {
+    -webkit-user-drag: none;
+    user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+  }
+}
+
+.tools {
+  @apply flex flex-[0.1] flex-wrap justify-around gap-1;
+  align-content: flex-start;
+  @apply border-solid border-[4px] border-t-c4 border-l-c4 border-r-c3 border-b-c3;
+
+  & .tool-1 {
+    @apply   h-[7%] w-[40%];
+    @apply border-solid border-[4px] border-t-c4 border-l-c4 border-r-c3 border-b-c3;
+  }
+  & .tool-2 {
+    @apply  h-[7%] w-[80%];
+    @apply border-solid border-[4px] border-t-c4 border-l-c4 border-r-c3 border-b-c3;
+  }
+
+}
+
+.canvas {
+  @apply flex flex-[0.9] bg-c1 gap-4 p-4;
+
+  & .avatar {
+    @apply border-solid border-[3px] border-c4 px-4 py-6;
+
+    & img {
+      @apply w-[103px] h-auto block mx-auto;
+    }
+  }
+
+  & .information {
+    @apply flex flex-col gap-4;
+    @apply border-solid border-[3px] border-c4 px-4 py-6;
+
+    & .info {
+      @apply flex items-center gap-4 text-[24px] text-c2 font-f1;
+
+      & .icon {
+        @apply w-[30px] h-[30px];
+
+      }
+
+      & .link {
+        @apply w-[24px] h-[24px];
+
+        &:hover {
+          cursor: url(../../../assets/img/click.png), auto;
+        }
+
+      }
+    }
+  }
+}
+
+.colors {
+  @apply  h-[7vh] w-full;
+  @apply border-solid border-[4px] border-t-c4 border-l-c4 border-r-c3 border-b-c3;
+
+}

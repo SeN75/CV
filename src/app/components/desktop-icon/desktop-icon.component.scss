@@ -1,17 +1,38 @@
 div {
-  @apply max-w-[100px] w-full h-auto my-2 p-1;
+  @apply max-w-[110px] w-full h-auto my-2 p-1;
   @apply flex flex-col items-center justify-center;
+  -webkit-user-drag: none;
+  user-drag: none;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  &:hover {
+    cursor: url(../../../assets/img/click.png), auto;
+  }
   &:active {
     @apply border-solid border-[3px] border-c3;
     cursor: url(../../../assets/img/click.png), auto;
   }
-  &:hover {
+  &.active {
+    @apply border-solid border-[3px] border-c3;
+    cursor: url(../../../assets/img/click.png), auto;
   }
   & img {
-    @apply block m-auto w-[70%] h-auto;
+    @apply block m-auto w-[70%] h-auto select-none;
+    cursor: inherit;
+    -webkit-user-drag: none;
+    user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
   }
   & p {
-    @apply text-c1 font-f1 text-center text-[1.2rem];
+    @apply text-c1 font-f1 text-center text-[1.2rem] select-none;
+    cursor: inherit;
   }
 }
 

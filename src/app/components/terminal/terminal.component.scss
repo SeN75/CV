@@ -1,0 +1,15 @@
+main {
+  @apply flex-1 bg-c1 text-c2 font-f1 text-[18px] p-5;
+  @apply overflow-auto max-h-[60vh];
+
+}
+
+.window {
+  @apply max-w-[50vw];
+}
+input {
+  @apply bg-transparent outline-none;
+}
+span {
+  @apply select-none;
+}

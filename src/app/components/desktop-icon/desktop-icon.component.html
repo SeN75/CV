@@ -1,6 +1,6 @@
 <nav>
-  <div *ngFor="let app of apps">
-    <img [src]="app.icon" />
+  <div *ngFor="let app of apps" [routerLink]="app.path" routerLinkActive="active">
+    <img [src]="app.icon" disabled="true" aria-disabled="true" />
     <p>{{ app.name }}</p>
   </div>
 </nav>

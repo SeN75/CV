@@ -1,0 +1,23 @@
+<section   cdkDragBoundary="body" cdkDrag #window class="window">
+  <header cdkDragHandle class="window_actions">
+    <div class="bf" >
+      <ul >
+        <li *ngFor="let b of headerButton; index as i">
+          <div>
+            <img class="{{b.class}}" [src]="b.img" (click)="actionButton(i)" >
+          </div>
+        </li>
+      </ul>
+      <div class=""></div>
+    </div>
+  </header>
+  <div class="body">
+    <div class="box bf text-1 ">▟ ∎ ▚▙▝ ▞ ▟ ∎ ▚</div>
+    <main #console>
+      <div class="line" #line>
+      </div>
+      <span >C:\user\saleh\desktop\> </span> <input [formControl]="terminal" (keypress)="$event.key == 'Enter'?action(): ''">
+
+    </main>
+</div>
+</section>

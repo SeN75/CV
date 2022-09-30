@@ -1,0 +1,8 @@
+div {
+  @apply absolute top-[-20%] right-0 left-0 bottom-0;
+  @apply flex items-center justify-center select-none z-[-1];
+  & h1 {
+    @apply max-w-[300px];
+    @apply text-c3 text-[3.2rem] text-center font-f1 leading-[1];
+  }
+}
