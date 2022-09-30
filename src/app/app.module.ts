@@ -23,7 +23,7 @@ import { ContactComponent } from './components/contact/contact.component';
     ThetitlesComponent,
     WindowsComponent,
     TerminalComponent,
-    ContactComponent
+    ContactComponent,
   ],
   imports: [
     BrowserModule,

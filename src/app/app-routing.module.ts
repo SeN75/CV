@@ -7,6 +7,7 @@ const routes: Routes = [
   {path: 'terminal', component: TerminalComponent,},
   {path: 'terminal/aboutme', component: TerminalComponent,},
   {path: 'contact', component: ContactComponent,},
+  {path: 'portfolio', loadChildren: () => import('./components/portfolio/portfolio.module') .then(m => m.PortfolioModule)},
 ];
 
 @NgModule({

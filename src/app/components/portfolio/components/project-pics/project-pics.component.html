@@ -1,0 +1,8 @@
+<nav class="folders">
+
+  <div class="file" *ngFor="let pic of pictures" >
+    <img [src]="pic.path" >
+    <span>{{pic.name}}</span>
+
+  </div>
+</nav>

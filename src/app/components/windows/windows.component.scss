@@ -1,13 +1,4 @@
 
-.window-contrainer {
-  position: relative;
-  z-index: 10;
-  width: 90vw;
-  height: 40vh;
-  max-width: 960px;
-  margin: 0 auto;
-  background-color: transparent;
-}
 
 
 section {
@@ -15,10 +6,6 @@ section {
   @apply inline-flex z-[1] box-border relative flex-col;
   @apply z-10 min-w-[40vw] min-h-[30vh];
 
-
-  &.bigger {
-    @apply bg-red-300
-  }
 
 }
 

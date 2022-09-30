@@ -1,0 +1,38 @@
+
+.seach_bar {
+  @apply flex w-full;
+  & div:nth-child(even) {
+    @apply flex-1;
+  }
+  & div:nth-child(odd) {
+    @apply md:inline-block sm:hidden;
+  }
+}
+
+
+
+.file_continer {
+  @apply flex w-full flex-1;
+  & div {
+    @apply flex;
+  }
+  & > div:nth-child(1) {
+    @apply flex-[0.2] flex-col;
+
+    & .file-col {
+      @apply h-full;
+    }
+  }
+  & > div:nth-child(2) {
+    @apply flex-[0.8];
+  }
+}
+
+
+.back_button {
+  @apply items-center w-[10%];
+  display: flex !important;
+  & img {
+    @apply w-[20px] ;
+  }
+}

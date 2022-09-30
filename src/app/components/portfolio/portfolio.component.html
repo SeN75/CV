@@ -1,0 +1,41 @@
+<section   cdkDragBoundary="body" cdkDrag #window  class="window">
+  <header cdkDragHandle class="window_actions">
+    <div class="bf" >
+      <ul >
+        <li *ngFor="let b of headerButton">
+          <div>
+            <img class="{{b.class}}" [src]="b.img" (click)="b.action; " >
+          </div>
+        </li>
+      </ul>
+      <div class=""></div>
+    </div>
+
+
+  </header>
+  <div class="body">
+    <div class="box bf text-1 ">▟ ∎ ▚▙▝ ▞ ▟ ∎ ▚</div>
+    <div class="seach_bar text-1">
+      <div class="bf " *ngIf="router.url == '/portfolio'">▚▙▝ ▞ </div>
+      <div *ngIf="router.url != '/portfolio'" class="bt back_button" routerLink="/portfolio"><img src="../../../assets/img/backbutton.svg"> Back</div>
+      <div class="bf">
+        <img  />
+        <span>C:\user\saleh\desktop{{replaceMethod(router.url)}}</span>
+      </div>
+      <div class="bf ">▚▙▝ ▞ </div>
+    </div>
+
+
+
+    <div class="file_continer">
+      <div class=" text-1">
+        <div class="bf  ">▟ ∎ ▚</div>
+        <div class=" file-col"></div>
+      </div>
+      <div class="file-col">
+        <router-outlet></router-outlet>
+
+      </div>
+    </div>
+</div>
+</section>

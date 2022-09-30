@@ -1,0 +1,10 @@
+
+.folders {
+  @apply w-full flex gap-5 p-5 break-words flex-wrap;
+  & .file {
+    @apply flex flex-col gap-2 text-c1 font-f1 text-center w-[100px] text-[20px];
+    & img {
+      @apply  w-full h-auto mx-auto;
+    }
+  }
+}
