@@ -40,7 +40,7 @@ export class ContactComponent implements OnInit, AfterViewInit {
     {icon: '../../../assets/img/twitter.svg', text: 'Twiter: @saleh_alsaggaf1' , link: "https://twitter.com/saleh_alsaggaf1"},
     {icon: '../../../assets/img/github.svg', text: 'Github: SeN75', link: "https://github.com/SeN75"},
     {icon: '../../../assets/img/instagram.svg', text: 'instagram: @saleh_alsaggaf', link: "https://www.instagram.com/saleh_alsaggaf/"},
-    {icon: '../../../assets/img/linkedin.svg', text: 'Linkedin: Saleh Alsaggaf', link: "linkedin.com/in/saleh-alsaggaf-38975a168"},
+    {icon: '../../../assets/img/linkedin.svg', text: 'Linkedin: Saleh Alsaggaf', link: "https://linkedin.com/in/saleh-alsaggaf-38975a168"},
   ];
  constructor(private router: Router) { }
 
