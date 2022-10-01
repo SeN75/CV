@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,7 +6,9 @@ import { Router } from '@angular/router';
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss']
 })
-export class ContactComponent implements OnInit {
+export class ContactComponent implements OnInit, AfterViewInit {
+  @ViewChild('window') window!: ElementRef;
+
   headerButton = [
     {
       class: 'xmark',
@@ -45,11 +47,30 @@ export class ContactComponent implements OnInit {
   ngOnInit(): void {
 
   }
-  actionButton(index: number) {
-    if(index == 0)
-    this.router.navigateByUrl('/');
-  }
+  ngAfterViewInit() {
+    this.window.nativeElement.classList.add('open_window')
+    setTimeout(() => {
+      this.window.nativeElement.classList.remove('open_window')
 
+    },500)
+  }
+  actionButton(index: number) {
+    if(index == 0) {
+      this.window.nativeElement.classList.add('close_window');
+      setTimeout(() => {
+        this.window.nativeElement.classList.remove('close_window');
+
+        this.router.navigateByUrl('/');
+      }, 500)
+    }
+    else if (index == 1){
+      if(this.window.nativeElement.classList.contains('window_bigger'))
+      this.window.nativeElement.classList.remove('window_bigger')
+      else
+      this.window.nativeElement.classList.add('window_bigger')
+
+    }
+  }
   openLink(link:string) {
     window.open(link)
   }

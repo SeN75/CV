@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HelperService } from 'src/app/service/helper.service';
 
 @Component({
   selector: 'app-project-pics',
@@ -8,22 +9,39 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
   styleUrls: ['./project-pics.component.scss']
 })
 export class ProjectPicsComponent implements OnInit {
-  pictures =[ {name: '', path: ''}];
-  constructor(private router: Router,  ) {
+  pictures: any =[ {name: '', path: '', link: ''}];
+  constructor(private router: Router, private helperSrv: HelperService  ) {
     if(this.router.url.includes('ahmall'))
     this.pictures = ahmall;
     else if (this.router.url.includes('qlean_app'))
     this.pictures = qleanapp;
     else if (this.router.url.includes('ejartech'))
     this.pictures = ejartech;
+    else if (this.router.url.includes('warshaplus'))
+    this.pictures = warshaplus;
+
 
    }
 
   ngOnInit(): void {
   }
+  openLink(link:string) {
+    window.open(link);
+  }
+  prview(i: number) {
+    this.helperSrv.picPreview.pics = [...this.pictures];
+    this.helperSrv.picPreview.index = i;
+    this.helperSrv.picPreview.title = this.router.url;
 
+    this.helperSrv.showGallery = true;
+
+  }
 }
-
+const warshaplus = [
+  {name: 'Warshaplus - Taqdeer' , link: "https://taqdeer.warshaplus.com/"},
+  {name: 'Warshaplus ' , link: "https://warshaplus.com/"},
+  {name: 'Warshaplus - Parts' , link: "https://parts.warshaplus.com/"},
+]
 const ejartech = [
   {name: 'home page 1', path: "../../../../../assets/img/portfolio/Ejartech/home page 1.png"},
   {name: 'home page 2', path: "../../../../../assets/img/portfolio/Ejartech/home page 2.png"},

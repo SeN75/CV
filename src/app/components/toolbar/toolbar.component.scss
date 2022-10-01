@@ -2,5 +2,5 @@ section {
   @apply w-full bg-c5 h-[7vh] select-none;
   @apply absolute bottom-0 right-0 left-0;
   @apply border-solid border-[5px] border-c1 border-b-[0] border-r-[0];
-  @apply flex;
+  @apply flex z-40;
 }

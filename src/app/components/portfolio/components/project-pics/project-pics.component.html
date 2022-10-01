@@ -1,7 +1,8 @@
 <nav class="folders">
 
-  <div class="file" *ngFor="let pic of pictures" >
-    <img [src]="pic.path" >
+  <div class="file" *ngFor="let pic of pictures; index as i" >
+    <img [src]="pic.path" *ngIf="pic.path" (click)="prview(i)">
+    <img src="../../../../../assets/img/internet.svg" class="link" *ngIf="!pic.path" (click)="openLink(pic.link)">
     <span>{{pic.name}}</span>
 
   </div>

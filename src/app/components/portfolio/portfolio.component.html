@@ -2,9 +2,9 @@
   <header cdkDragHandle class="window_actions">
     <div class="bf" >
       <ul >
-        <li *ngFor="let b of headerButton">
+        <li *ngFor="let b of headerButton; index as i">
           <div>
-            <img class="{{b.class}}" [src]="b.img" (click)="b.action; " >
+            <img class="{{b.class}}" [src]="b.img" (click)="actionButton(i)"  >
           </div>
         </li>
       </ul>

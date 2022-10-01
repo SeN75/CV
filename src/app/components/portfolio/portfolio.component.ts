@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Route, Router } from '@angular/router';
 
 @Component({
@@ -6,7 +6,7 @@ import { Route, Router } from '@angular/router';
   templateUrl: './portfolio.component.html',
   styleUrls: ['./portfolio.component.scss']
 })
-export class PortfolioComponent implements OnInit {
+export class PortfolioComponent implements OnInit, AfterViewInit {
   headerButton = [
     {
       class: 'xmark',
@@ -18,7 +18,31 @@ export class PortfolioComponent implements OnInit {
   ];
 
   constructor(public router: Router) { }
+  @ViewChild('window') window!: ElementRef;
+  ngAfterViewInit() {
+    this.window.nativeElement.classList.add('open_window')
+    setTimeout(() => {
+      this.window.nativeElement.classList.remove('open_window')
 
+    },500)
+  }
+  actionButton(index: number) {
+    if(index == 0) {
+      this.window.nativeElement.classList.add('close_window');
+      setTimeout(() => {
+        this.window.nativeElement.classList.remove('close_window');
+
+        this.router.navigateByUrl('/');
+      }, 500)
+    }
+    else if (index == 1){
+      if(this.window.nativeElement.classList.contains('window_bigger'))
+      this.window.nativeElement.classList.remove('window_bigger')
+      else
+      this.window.nativeElement.classList.add('window_bigger')
+
+    }
+  }
   ngOnInit(): void {
   }
   replaceMethod(url: string) {

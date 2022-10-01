@@ -75,13 +75,22 @@ h6 {
 
 .window {
 
-  @apply inline-flex z-[1] box-border relative flex-col;
+  @apply inline-flex z-[1] box-border fixed flex-col ;
+  @apply xl:top-[10%] xl:left-[30%] lg:top-[20%] lg:left-[20%];;
   @apply z-10 xl:min-w-[40vw] lg:min-w-[60vw] md:min-w-[80vw] sm:min-w-[95vw]  max-w-[70vw] min-h-[30vh];
 
-
-
+}
+.window_bigger {
+  @apply top-0 left-0 w-full h-full  max-h-[unset] ;
+  max-width: unset !important;
 }
 
+.open_window {
+  animation: open 500ms forwards;
+}
+.close_window {
+  animation: close 500ms forwards;
+}
 
 .window_actions {
   @apply w-full;
@@ -124,3 +133,25 @@ h6 {
 .bt {
   @apply cursor-p2 btn-1;
 }
+
+
+
+@keyframes open {
+0% {
+  transform: scale(0.5);
+}
+100% {
+  transform: scale(1);
+}
+}
+@keyframes close {
+  0% {
+
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.5);
+    top: 100%;
+  }
+}
+

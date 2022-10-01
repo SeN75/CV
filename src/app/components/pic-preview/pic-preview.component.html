@@ -1,0 +1,30 @@
+<section cdkDragBoundary="body" cdkDrag #window class="window" [cdkDragFreeDragPosition]="dragPosition">
+  <header cdkDragHandle class="window_actions">
+    <div class="bf">
+      <ul>
+        <li *ngFor="let b of headerButton; index as i">
+          <div>
+            <img class="{{b.class}}" [src]="b.img" (click)="actionButton(i)">
+          </div>
+        </li>
+      </ul>
+      <div class=""></div>
+    </div>
+  </header>
+  <div class="body">
+    <div class="box bf text-1 ">▟ ∎ ▚▙▝ ▞ ▟ ∎ ▚</div>
+    <main>
+      <p>
+        {{helperSrv.picPreview.title}}
+      </p>
+
+      <div class="image_preview">
+        <button class="bt" (click)="next()"><img src="../../../assets/img/navarrow-left.svg"></button>
+        <div class="img">
+          <img [src]="preview()">
+        </div>
+        <button class="bt" (click)="back()"><img src="../../../assets/img/navarrow-right.svg"></button>
+      </div>
+    </main>
+  </div>
+</section>

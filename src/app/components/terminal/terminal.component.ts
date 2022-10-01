@@ -18,6 +18,7 @@ export class TerminalComponent implements OnInit, AfterViewInit  {
     { class: 'min', img: '../../../assets/img/minimaize.svg', action: '' },
   ];
 
+  dragPosition = {x: (0), y:-(0)}
 
   @ViewChild('window') window!: ElementRef;
   @ViewChild('console') _console!: ElementRef;
@@ -26,6 +27,7 @@ export class TerminalComponent implements OnInit, AfterViewInit  {
   terminal: FormControl;
   constructor(private router: Router) {
     this.terminal = new FormControl();
+
   }
 
   ngOnInit(): void {
@@ -36,10 +38,28 @@ export class TerminalComponent implements OnInit, AfterViewInit  {
       this.terminal.setValue('run about-me.exe');
       this.action();
     }
+    this.window.nativeElement.classList.add('open_window')
+    setTimeout(() => {
+      this.window.nativeElement.classList.remove('open_window')
+
+    },500)
   }
   actionButton(index: number) {
-    if(index == 0)
-    this.router.navigateByUrl('/');
+    if(index == 0) {
+      this.window.nativeElement.classList.add('close_window');
+      setTimeout(() => {
+        this.window.nativeElement.classList.remove('close_window');
+
+        this.router.navigateByUrl('/');
+      }, 500)
+    }
+    else if (index == 1){
+      if(this.window.nativeElement.classList.contains('window_bigger'))
+      this.window.nativeElement.classList.remove('window_bigger')
+      else
+      this.window.nativeElement.classList.add('window_bigger')
+
+    }
   }
   action() {
     let w = document.createElement('div');

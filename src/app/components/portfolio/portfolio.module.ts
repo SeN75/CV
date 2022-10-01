@@ -8,19 +8,17 @@ import { ProjectPicsComponent } from './components/project-pics/project-pics.com
 import { HttpClientModule } from '@angular/common/http';
 
 
-
-
 @NgModule({
   declarations: [
     PortfolioComponent,
     ProjectComponent,
-    ProjectPicsComponent
+    ProjectPicsComponent,
+
   ],
   imports: [
     CommonModule,
     DragDropModule,
     HttpClientModule,
-
     RouterModule.forChild([
       {path: '', component: PortfolioComponent, children: [
         {path: '', component: ProjectComponent},
@@ -28,8 +26,6 @@ import { HttpClientModule } from '@angular/common/http';
       ]}
 
     ]),
-
-
-  ]
+  ],
 })
 export class PortfolioModule { }

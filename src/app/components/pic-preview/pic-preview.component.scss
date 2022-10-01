@@ -1,0 +1,29 @@
+main{
+  @apply flex-1 bg-c2 p-8;
+
+  & p {
+    @apply text-c1 font-f1 text-center text-[25px];
+  }
+}
+
+
+.image_preview {
+  @apply flex w-full justify-around items-center;
+  & button {
+    @apply w-[40px];
+    &:hover {
+      cursor: url(../../../assets/img/click.png) ,auto;
+    }
+  }
+  & .img {
+    @apply max-w-[80%]  w-auto max-h-[60vh]  h-auto min-h-[100px];
+    & img {
+      @apply h-full w-auto block mx-auto  max-h-[40vh];
+    }
+  }
+}
+
+
+.window_bigger .image_preview .img img {
+  @apply max-h-[65vh];
+}

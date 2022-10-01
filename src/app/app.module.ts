@@ -13,7 +13,7 @@ import { WindowsComponent } from './components/windows/windows.component';
 import { TerminalComponent } from './components/terminal/terminal.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ContactComponent } from './components/contact/contact.component';
-
+import { PicPreviewComponent } from './components/pic-preview/pic-preview.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,15 +24,17 @@ import { ContactComponent } from './components/contact/contact.component';
     WindowsComponent,
     TerminalComponent,
     ContactComponent,
+    PicPreviewComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     DragDropModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: []
 })
 export class AppModule { }
