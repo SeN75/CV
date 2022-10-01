@@ -1,6 +1,68 @@
 section {
-  @apply w-full bg-c5 h-[7vh] select-none;
+  @apply w-full bg-c5 h-[65px] select-none p-2 font-f1 text-c1;
   @apply absolute bottom-0 right-0 left-0;
   @apply border-solid border-[5px] border-c1 border-b-[0] border-r-[0];
   @apply flex z-40;
+}
+
+.skils {
+  @apply text-[28px] text-c2 mr-4;
+}
+.bt {
+  @apply mx-2;
+}
+.bt img {
+  @apply w-auto h-full m-auto flex;
+}
+
+.skils_box {
+  @apply w-[300px] h-[482px] fixed bottom-[-100vh] left-0  duration-500 transition-all;
+  @apply border-solid border-[7px] border-t-c4 border-l-c4 border-b-c3 border-r-c3 bg-c5;
+  @apply flex;
+
+  & .date {
+    @apply w-[48px] h-full bg-c3 text-c1 font-f1 text-center text-[24px] px-2.5;
+    writing-mode:vertical-lr;
+    transform: scale(-1);
+  }
+  &.open {
+    @apply transition-all bottom-[65px] duration-500
+  }
+}
+
+
+.list {
+  @apply flex flex-col gap-4 flex-[0.9];
+  & ul {
+    @apply w-full py-4 pl-2;
+
+    & li {
+      @apply flex text-c1 font-f1 gap-3 py-2 items-center;
+      @apply border-solid border-b-[2px] border-c3;
+
+      & img {
+        @apply w-[42.24px] h-auto block;
+      }
+
+    }
+  }
+}
+
+
+.clock {
+  @apply flex ml-auto items-center text-[28px];
+
+  & span {
+    animation: colne 1000ms infinite;
+  }
+}
+
+
+@keyframes colne {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

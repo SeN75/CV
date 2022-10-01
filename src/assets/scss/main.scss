@@ -3,12 +3,12 @@
 @tailwind utilities;
 
 body {
-  @apply bg-c6 font-f1 overflow-hidden;
+  @apply md:bg-c6 font-f1 overflow-hidden sm:bg-c6;
 }
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  // box-sizing: border-box;
   cursor: url("../img/mouse1.png"), default;
 
   ::-moz-selection { /* Code for Firefox */
@@ -37,12 +37,20 @@ h6 {
       @apply border-solid border-b-[5px] border-r-[5px] border-b-c1  border-r-c1;
       @apply border-solid border-t-[7px] border-l-[7px] border-t-c2 border-l-c2;
     }
+    &.active {
+      @apply border-solid border-b-[5px] border-r-[5px] border-b-c1  border-r-c1;
+      @apply border-solid border-t-[7px] border-l-[7px] border-t-c2 border-l-c2;
+    }
     &::before {
       @apply content-[''] w-[100%] h-[100%] left-0 top-0 absolute;
       @apply border-solid border-t-[2px] border-l-[2px] border-t-c3  border-l-c3;
       @apply border-solid border-b-[3px] border-r-[3px] border-b-c4 border-r-c4;
     }
     &:active::before {
+      @apply border-solid border-b-[2px] border-r-[2px] border-b-c3  border-r-c3;
+      @apply border-solid border-t-[3px] border-l-[3px] border-t-c4 border-l-c4;
+    }
+    &.active::before {
       @apply border-solid border-b-[2px] border-r-[2px] border-b-c3  border-r-c3;
       @apply border-solid border-t-[3px] border-l-[3px] border-t-c4 border-l-c4;
     }

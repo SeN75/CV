@@ -1,6 +1,7 @@
 div {
-  @apply max-w-[110px] w-full h-auto my-2 p-1;
+  @apply md:max-w-[110px] sm:max-w-[30%] w-full h-auto my-2 p-1;
   @apply flex flex-col items-center justify-center;
+
   -webkit-user-drag: none;
   user-drag: none;
   -webkit-user-drag: none;
@@ -31,11 +32,13 @@ div {
     -ms-user-select: none;
   }
   & p {
-    @apply text-c1 font-f1 text-center text-[1.2rem] select-none;
+    @apply text-c1 font-f1 text-center md:text-[1.2rem] sm:text-[1.0rem] select-none;
     cursor: inherit;
   }
 }
 
 nav {
-  @apply px-4;
+  @apply px-4 flex md:flex-col sm:flex-row sm:flex-wrap md:pt-0 sm:pt-[5vh] md:justify-start sm:justify-between;
+
+
 }

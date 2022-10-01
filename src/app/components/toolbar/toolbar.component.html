@@ -1,1 +1,39 @@
-<section><div class="bt">fdfd</div></section>
+<section>
+  <div class="bt skils {{showMenu? 'active': ''}}" (click)="showMenu = !showMenu">Skils</div>
+
+  <div class="bt" routerLink="/terminal/aboutme" routerLinkActive="active">
+    <img src="../../../assets/img/saleh.svg" >
+  </div>
+  <div class="bt" routerLink="/portfolio" routerLinkActive="active">
+    <img src="../../../assets/img/folder.svg"  >
+  </div>
+  <div class="bt" routerLink="/contact" routerLinkActive="active">
+    <img src="../../../assets/img/phone.svg" >
+  </div>
+
+  <div class="clock">
+    {{hour | number:'2.0-0'}}
+    <span>:</span>
+    {{minuts | number:'2.0-0'}}
+
+    {{ampm}}
+  </div>
+</section>
+
+
+<!-- skils -->
+<div class="skils_box {{showMenu? 'open' : ''}}">
+
+<div class="date">
+  1999
+</div>
+
+<div class="list">
+  <ul>
+    <li *ngFor="let s of skils">
+      <img [src]="s.pic">
+      <p>{{s.text}}</p>
+    </li>
+  </ul>
+</div>
+</div>
