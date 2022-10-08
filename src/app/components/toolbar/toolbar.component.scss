@@ -16,7 +16,7 @@ section {
 }
 
 .skils_box {
-  @apply w-[300px] h-[482px] fixed bottom-[-100vh] left-0  duration-500 transition-all;
+  @apply w-[300px] h-[482px] fixed bottom-[-100vh] left-0  duration-500 transition-all z-20;
   @apply border-solid border-[7px] border-t-c4 border-l-c4 border-b-c3 border-r-c3 bg-c5;
   @apply flex;
 
@@ -50,7 +50,7 @@ section {
 
 
 .clock {
-  @apply flex ml-auto items-center text-[28px];
+  @apply md:flex ml-auto items-center text-[28px] sm:hidden;
 
   & span {
     animation: colne 1000ms infinite;

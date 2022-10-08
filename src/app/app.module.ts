@@ -14,6 +14,7 @@ import { TerminalComponent } from './components/terminal/terminal.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ContactComponent } from './components/contact/contact.component';
 import { PicPreviewComponent } from './components/pic-preview/pic-preview.component';
+import { PortfolioModule } from './components/portfolio/portfolio.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +25,7 @@ import { PicPreviewComponent } from './components/pic-preview/pic-preview.compon
     WindowsComponent,
     TerminalComponent,
     ContactComponent,
-    PicPreviewComponent
+    PicPreviewComponent,
   ],
   imports: [
     BrowserModule,

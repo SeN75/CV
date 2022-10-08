@@ -1,5 +1,5 @@
 <nav>
-  <div *ngFor="let app of apps" [routerLink]="app.path" routerLinkActive="active">
+  <div *ngFor="let app of apps; index as i" (click)="action(i)" routerLinkActive="active">
     <img [src]="app.icon" disabled="true" aria-disabled="true" />
     <p>{{ app.name }}</p>
   </div>

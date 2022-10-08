@@ -1,5 +1,5 @@
 main{
-  @apply flex-1 bg-c2 p-8;
+  @apply flex-1 bg-c2 md:p-8 sm:p-4;
 
   & p {
     @apply text-c1 font-f1 text-center text-[25px];
@@ -18,7 +18,7 @@ main{
   & .img {
     @apply max-w-[80%]  w-auto max-h-[60vh]  h-auto min-h-[100px];
     & img {
-      @apply h-full w-auto block mx-auto  max-h-[40vh];
+      @apply h-full w-auto block mx-auto  md:max-h-[40vh] sm:max-h-[60vh];
     }
   }
 }

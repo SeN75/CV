@@ -17,20 +17,20 @@
     @apply flex;
   }
   & > div:nth-child(1) {
-    @apply flex-[0.2] flex-col;
+    @apply md:flex-[0.2] flex-col sm:hidden md:flex;
 
     & .file-col {
       @apply h-full;
     }
   }
   & > div:nth-child(2) {
-    @apply flex-[0.8];
+    @apply md:flex-[0.8] sm:flex-1;
   }
 }
 
 
 .back_button {
-  @apply items-center w-[10%];
+  @apply items-center md:w-[10%] sm:w-[20%];
   display: flex !important;
   & img {
     @apply w-[20px] ;

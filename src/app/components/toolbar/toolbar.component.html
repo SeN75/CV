@@ -1,13 +1,13 @@
 <section>
   <div class="bt skils {{showMenu? 'active': ''}}" (click)="showMenu = !showMenu">Skils</div>
 
-  <div class="bt" routerLink="/terminal/aboutme" routerLinkActive="active">
+  <div class="bt {{halperSrv.showAbout ? 'active': ''}}" (click)="halperSrv.showAbout = !halperSrv.showAbout">
     <img src="../../../assets/img/saleh.svg" >
   </div>
-  <div class="bt" routerLink="/portfolio" routerLinkActive="active">
+  <div class="bt {{halperSrv.showPor ? 'active': ''}}" (click)="action(1)">
     <img src="../../../assets/img/folder.svg"  >
   </div>
-  <div class="bt" routerLink="/contact" routerLinkActive="active">
+  <div class="bt {{halperSrv.showContact ? 'active': ''}}" (click)="halperSrv.showContact = !halperSrv.showContact">
     <img src="../../../assets/img/phone.svg" >
   </div>
 

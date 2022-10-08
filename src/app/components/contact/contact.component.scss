@@ -1,5 +1,5 @@
 .tools_canvas {
-  @apply flex flex-1 h-[90%];
+  @apply flex md:flex-1 md:h-[90%] ;
 
   & img {
     -webkit-user-drag: none;
@@ -13,7 +13,7 @@
 }
 
 .tools {
-  @apply flex flex-[0.1] flex-wrap justify-around gap-1;
+  @apply sm:hidden md:flex flex-[0.1] flex-wrap justify-around gap-1;
   align-content: flex-start;
   @apply border-solid border-[4px] border-t-c4 border-l-c4 border-r-c3 border-b-c3;
 
@@ -29,10 +29,10 @@
 }
 
 .canvas {
-  @apply flex flex-[0.9] bg-c1 gap-4 p-4;
+  @apply flex md:flex-[0.9] md:w-[unset] sm:w-full bg-c1 gap-4 p-4 md:flex-row sm:flex-col;
 
   & .avatar {
-    @apply border-solid border-[3px] border-c4 px-4 py-6;
+    @apply border-solid md:border-[3px] border-c4 px-4 md:py-6;
 
     & img {
       @apply w-[103px] h-auto block mx-auto;
@@ -41,10 +41,10 @@
 
   & .information {
     @apply flex flex-col gap-4;
-    @apply border-solid border-[3px] border-c4 px-4 py-6;
+    @apply border-solid md:border-[3px] border-c4 md:px-4 md:py-6;
 
     & .info {
-      @apply flex items-center gap-4 text-[24px] text-c2 font-f1;
+      @apply flex items-center gap-4 md:text-[24px] sm:text-[120%] text-c2 font-f1;
 
       & .icon {
         @apply w-[30px] h-[30px];
@@ -64,7 +64,7 @@
 }
 
 .colors {
-  @apply  h-[7vh] w-full;
+  @apply  h-[7vh] w-full md:block sm:hidden;
   @apply border-solid border-[4px] border-t-c4 border-l-c4 border-r-c3 border-b-c3;
 
 }

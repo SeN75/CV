@@ -1,9 +1,10 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
+import { HelperService } from 'src/app/service/helper.service';
 
 @Component({
-  selector: 'app-terminal',
+  selector: 'terminal',
   templateUrl: './terminal.component.html',
   styleUrls: ['./terminal.component.scss']
 })
@@ -23,9 +24,9 @@ export class TerminalComponent implements OnInit, AfterViewInit  {
   @ViewChild('window') window!: ElementRef;
   @ViewChild('console') _console!: ElementRef;
   @ViewChild('line') line!: ElementRef;
-
+  @Input() activeApp = '';
   terminal: FormControl;
-  constructor(private router: Router) {
+  constructor(private router: Router, private helperSrv: HelperService) {
     this.terminal = new FormControl();
 
   }
@@ -34,7 +35,7 @@ export class TerminalComponent implements OnInit, AfterViewInit  {
 
   }
   ngAfterViewInit() {
-    if(this.router.url.includes('aboutme')) {
+    if(this.router.url.includes('aboutme') || this.activeApp == 'about') {
       this.terminal.setValue('run about-me.exe');
       this.action();
     }
@@ -49,7 +50,7 @@ export class TerminalComponent implements OnInit, AfterViewInit  {
       this.window.nativeElement.classList.add('close_window');
       setTimeout(() => {
         this.window.nativeElement.classList.remove('close_window');
-
+        this.helperSrv.showAbout = false;
         this.router.navigateByUrl('/');
       }, 500)
     }
@@ -69,7 +70,7 @@ export class TerminalComponent implements OnInit, AfterViewInit  {
     if( value == 'clear') {
       this.line.nativeElement.innerText = '';
     }
-    else if(value == 'help') {
+    else if(value == 'help' || value == 'run help') {
       w.innerText  = this.help(w);
       this.line.nativeElement.appendChild(w)
     }
@@ -77,8 +78,13 @@ export class TerminalComponent implements OnInit, AfterViewInit  {
       w.innerText  = this.aboutme(w);
       this.line.nativeElement.appendChild(w)
     }
-    else if(value == "run contact-me.exe")
-    this.router.navigateByUrl('/contact');
+    else if(value == "run contact-me.exe"){
+      this.helperSrv.showContact = true;
+     // this.router.navigateByUrl('/contact');
+    }
+    else if(value == "run portfolio")
+    this.helperSrv.showPor = true;
+    // this.router.navigateByUrl('/portfolio');
     else {
       w.innerText += "\nUnknown Command: " + value + ". enter help to see avilabel commands"
       this.line.nativeElement.appendChild(w)

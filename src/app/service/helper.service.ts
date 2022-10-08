@@ -11,5 +11,8 @@ export class HelperService {
   }
 
   showGallery = false;
+  showContact = false;
+  showPor = false;
+  showAbout = false;
   constructor() { }
 }

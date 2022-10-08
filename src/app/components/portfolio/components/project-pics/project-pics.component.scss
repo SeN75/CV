@@ -2,7 +2,7 @@
 .folders {
   @apply w-full flex gap-5 p-5 break-words flex-wrap  max-h-[60vh] overflow-auto;
   & .file {
-    @apply flex flex-col gap-2 text-c1 font-f1 text-center w-[100px] text-[15px];
+    @apply flex flex-col gap-2 text-c1 font-f1 text-center md:w-[100px] sm:w-[28%] text-[15px];
     & img {
       @apply  w-full h-auto mx-auto;
       &.link{

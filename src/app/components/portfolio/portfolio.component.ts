@@ -1,8 +1,9 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Route, Router } from '@angular/router';
+import { HelperService } from 'src/app/service/helper.service';
 
 @Component({
-  selector: 'app-portfolio',
+  selector: 'portfolio',
   templateUrl: './portfolio.component.html',
   styleUrls: ['./portfolio.component.scss']
 })
@@ -17,7 +18,7 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
     { class: 'min', img: '../../../assets/img/minimaize.svg', action: '' },
   ];
 
-  constructor(public router: Router) { }
+  constructor(public router: Router, private helperSrv:HelperService) { }
   @ViewChild('window') window!: ElementRef;
   ngAfterViewInit() {
     this.window.nativeElement.classList.add('open_window')
@@ -31,7 +32,7 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
       this.window.nativeElement.classList.add('close_window');
       setTimeout(() => {
         this.window.nativeElement.classList.remove('close_window');
-
+        this.helperSrv.showPor = false;
         this.router.navigateByUrl('/');
       }, 500)
     }

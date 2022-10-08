@@ -21,11 +21,14 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     RouterModule.forChild([
       {path: '', component: PortfolioComponent, children: [
+
         {path: '', component: ProjectComponent},
         {path: ':project', component: ProjectPicsComponent},
       ]}
 
     ]),
+
   ],
+  exports: [PortfolioComponent]
 })
 export class PortfolioModule { }
