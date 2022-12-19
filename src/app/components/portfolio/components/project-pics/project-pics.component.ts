@@ -10,7 +10,7 @@ import { HelperService } from 'src/app/service/helper.service';
 })
 export class ProjectPicsComponent implements OnInit {
   pictures: any =[ {name: '', path: '', link: ''}];
-  constructor(private router: Router, private helperSrv: HelperService  ) {
+  constructor(private router: Router, public helperSrv: HelperService  ) {
     if(this.router.url.includes('ahmall'))
     this.pictures = ahmall;
     else if (this.router.url.includes('qlean_app'))
@@ -33,7 +33,8 @@ export class ProjectPicsComponent implements OnInit {
     this.helperSrv.picPreview.index = i;
     this.helperSrv.picPreview.title = this.router.url;
 
-    this.helperSrv.showGallery = true;
+    this.helperSrv.windows[3].isOpen = true;
+    this.helperSrv.windoClick(3);
 
   }
 }

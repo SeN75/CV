@@ -1,6 +1,6 @@
 main {
   @apply flex-1 bg-c1 text-c2 font-f1 md:text-[18px] sm:text-[15px] md:p-5 sm:p-4;
-  @apply overflow-auto md:max-h-[100%] sm:max-h-[75vh];
+  @apply overflow-auto max-h-[75vh];
 
 }
 

@@ -21,12 +21,14 @@ export class DesktopIconComponent implements OnInit {
   ngOnInit(): void {}
   action(index: number) {
     if(index == 0)
-    this.helperSrv.showAbout = true;
+    this.helperSrv.windows[0].isOpen = true;
     if(index == 1){
       this.router.navigateByUrl('/portfolio')
-      this.helperSrv.showPor = true;
+      this.helperSrv.windows[1].isOpen = true;
     }
     if(index == 2)
-    this.helperSrv.showContact = true;
+    this.helperSrv.windows[2].isOpen = true;
+
+    this.helperSrv.windoClick(index);
   }
 }

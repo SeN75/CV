@@ -1,14 +1,18 @@
 <section>
-<desktop-icon></desktop-icon> <thetitles></thetitles> <toolbar></toolbar>
-<!-- <windows></windows> -->
-<router-outlet></router-outlet>
-<pic-preview *ngIf="helperSrv.showGallery">
+  <desktop-icon></desktop-icon>
+  <thetitles></thetitles>
+  <toolbar></toolbar>
+  <!-- <windows></windows> -->
+  <router-outlet
+  ></router-outlet>
+  <pic-preview *ngIf="helperSrv.windows[3].isOpen">
 
-</pic-preview>
+  </pic-preview>
 
-<terminal *ngIf="helperSrv.showAbout" activeApp="about"></terminal>
-<!-- <portfolio *ngIf="helperSrv.showPor"></portfolio> -->
-<contact *ngIf="helperSrv.showContact"></contact>
+  <terminal *ngIf="helperSrv.windows[0].isOpen" activeApp="about"
+    ></terminal>
+  <!-- <portfolio *ngIf="helperSrv.showPor"></portfolio> -->
+  <contact *ngIf="helperSrv.windows[2].isOpen" ></contact>
 </section>
 <!--
 <section class="mobile">

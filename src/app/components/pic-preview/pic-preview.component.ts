@@ -18,7 +18,7 @@ export class PicPreviewComponent implements OnInit, AfterViewInit {
       setTimeout(() => {
         this.window.nativeElement.classList.remove('close_window');
 
-        this.helperSrv.showGallery = false;
+        this.helperSrv.windows[3].isOpen = false;
       }, 500)
     }
     else if (index == 1) {

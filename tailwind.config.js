@@ -15,6 +15,7 @@ module.exports = {
         c4: "#339966",
         c5: "#519391",
         c6: "#339999",
+        c7: "#339999",
       },
       screens: {
         sm: "0",
@@ -33,6 +34,8 @@ module.exports = {
         // => @media (min-width: 1536px) { ... }
       },
       fontFamily: {
+
+        f2: ["'Press Start 2P'"],
         f1: ["Russo One", "sans-serif"],
       },
     },

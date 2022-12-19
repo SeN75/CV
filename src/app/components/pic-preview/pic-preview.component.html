@@ -1,10 +1,11 @@
-<section cdkDragBoundary="body" cdkDrag #window class="window" [cdkDragFreeDragPosition]="dragPosition">
+<section cdkDragBoundary="body" cdkDrag #window class="window" [cdkDragFreeDragPosition]="dragPosition"
+  [style.z-index]="helperSrv.windows[3]['z-index']" (click)="helperSrv.windoClick(3)">
   <header cdkDragHandle class="window_actions">
     <div class="bf">
       <ul>
-        <li *ngFor="let b of headerButton; index as i">
+        <li *ngFor="let b of headerButton; index as i" (click)="actionButton(i)">
           <div>
-            <img class="{{b.class}}" [src]="b.img" (click)="actionButton(i)">
+            <img class="{{b.class}}" [src]="b.img">
           </div>
         </li>
       </ul>

@@ -36,7 +36,12 @@ export class ToolbarComponent implements OnInit {
   }
 
   action(index: number){
-    if(index == 1)
-    this.router.navigateByUrl('/portfolio')
+
+    if(index == 1){
+
+      this.router.navigateByUrl(this.halperSrv.windows[1].isOpen ? '/' : '/portfolio')
+
+    }
+    this.halperSrv.windoClick(index);
   }
 }

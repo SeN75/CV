@@ -47,7 +47,7 @@ export class ContactComponent implements OnInit, AfterViewInit {
   ];
  constructor(private router: Router,
   breakpointObserver: BreakpointObserver,
-  private helperSrv: HelperService
+  public helperSrv: HelperService
   ) {
 
     this.img = breakpointObserver
@@ -70,8 +70,8 @@ export class ContactComponent implements OnInit, AfterViewInit {
       this.window.nativeElement.classList.add('close_window');
       setTimeout(() => {
         this.window.nativeElement.classList.remove('close_window');
-        this.helperSrv.showContact = false;
-        this.router.navigateByUrl('/');
+        this.helperSrv.windows[2].isOpen = false;
+        // this.router.navigateByUrl('/');
       }, 500)
     }
     else if (index == 1){

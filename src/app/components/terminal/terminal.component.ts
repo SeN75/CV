@@ -26,7 +26,7 @@ export class TerminalComponent implements OnInit, AfterViewInit  {
   @ViewChild('line') line!: ElementRef;
   @Input() activeApp = '';
   terminal: FormControl;
-  constructor(private router: Router, private helperSrv: HelperService) {
+  constructor(private router: Router, public helperSrv: HelperService) {
     this.terminal = new FormControl();
 
   }
@@ -50,8 +50,8 @@ export class TerminalComponent implements OnInit, AfterViewInit  {
       this.window.nativeElement.classList.add('close_window');
       setTimeout(() => {
         this.window.nativeElement.classList.remove('close_window');
-        this.helperSrv.showAbout = false;
-        this.router.navigateByUrl('/');
+        this.helperSrv.windows[0].isOpen = false;
+        // this.router.navigateByUrl('/');
       }, 500)
     }
     else if (index == 1){

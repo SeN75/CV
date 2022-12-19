@@ -18,7 +18,7 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
     { class: 'min', img: '../../../assets/img/minimaize.svg', action: '' },
   ];
 
-  constructor(public router: Router, private helperSrv:HelperService) { }
+  constructor(public router: Router, public helperSrv:HelperService) { }
   @ViewChild('window') window!: ElementRef;
   ngAfterViewInit() {
     this.window.nativeElement.classList.add('open_window')
@@ -32,7 +32,7 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
       this.window.nativeElement.classList.add('close_window');
       setTimeout(() => {
         this.window.nativeElement.classList.remove('close_window');
-        this.helperSrv.showPor = false;
+        this.helperSrv.windows[1].isOpen = false;
         this.router.navigateByUrl('/');
       }, 500)
     }

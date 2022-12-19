@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@import 'fonts';
 body {
   @apply md:bg-c6 font-f1 overflow-hidden sm:bg-c6;
 }
@@ -87,7 +87,8 @@ h6 {
 
   @apply inline-flex z-[1] box-border fixed flex-col ;
   @apply xl:top-[10%] xl:left-[30%] lg:top-[20%] lg:left-[20%]  sm:top-0 sm:left-0;
-  @apply z-10 xl:min-w-[40vw] lg:min-w-[60vw] md:min-w-[80vw] sm:min-w-[100vw]  md:max-w-[70vw] md:min-h-[30vh] sm:h-[93vh];
+  @apply z-10 xl:min-w-[40vw] lg:min-w-[60vw] md:min-w-[80vw] sm:min-w-[100vw]  md:max-w-[70vw] md:min-h-[30vh] md:max-h-[70vh] md:h-[60vh] sm:h-[93vh];
+  resize: both;
 
 }
 .window_bigger {
