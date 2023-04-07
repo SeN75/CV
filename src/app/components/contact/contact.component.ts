@@ -37,9 +37,10 @@ export class ContactComponent implements OnInit, AfterViewInit {
   ];
 
   img:Observable<'avatar' | 'saleh'> ;
+
   information: any = [
-    {icon: '../../../assets/img/mail.svg', text: 'Email: saa111954@hotmail\.com'},
-    {icon: '../../../assets/img/phone2.svg', text: 'Phone: +966-551594683'},
+    {icon: '../../../assets/img/mail.svg', text: 'Email: saleh-alsaggaf7575@outlook\.com'},
+    // {icon: '../../../assets/img/phone2.svg', text: 'Phone: +966-551594683'},
     {icon: '../../../assets/img/twitter.svg', text: 'Twiter: @saleh_alsaggaf1' , link: "https://twitter.com/saleh_alsaggaf1"},
     {icon: '../../../assets/img/github.svg', text: 'Github: SeN75', link: "https://github.com/SeN75"},
     {icon: '../../../assets/img/instagram.svg', text: 'instagram: @saleh_alsaggaf', link: "https://www.instagram.com/saleh_alsaggaf/"},
