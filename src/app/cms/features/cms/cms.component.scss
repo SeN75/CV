@@ -1,0 +1,338 @@
+// Retro color variables
+$retro-bg: #000000;
+$retro-sidebar: #1a1a1a;
+$retro-text: #00ff00; // Classic green terminal text
+$retro-accent: #4a4a4a;
+$retro-hover: #3a3a3a;
+$retro-glow: rgba(51, 255, 0, 0.4);
+
+@keyframes textShadowPulse {
+  0% {
+    text-shadow: 0 0 4px $retro-glow;
+  }
+  50% {
+    text-shadow: 0 0 8px $retro-glow;
+  }
+  100% {
+    text-shadow: 0 0 4px $retro-glow;
+  }
+}
+
+@keyframes scanline {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.layout-wrapper {
+  min-height: 100vh;
+  display: flex;
+  background-color: var(--surface-ground);
+}
+
+.layout-sidebar {
+  .sidebar-header {
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid var(--surface-border);
+
+    .logo {
+      h2 {
+        margin: 0;
+        color: var(--primary-color);
+        font-weight: 600;
+      }
+    }
+  }
+
+  .layout-menu {
+    padding: 0;
+
+    .p-panelmenu {
+      .p-panelmenu-header-link {
+        padding: 1rem;
+
+        &:focus {
+          box-shadow: none;
+        }
+      }
+
+      .p-panelmenu-content {
+        .p-menuitem-link {
+          padding: 0.75rem 1rem;
+        }
+      }
+    }
+  }
+}
+
+.layout-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.layout-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: var(--surface-card);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  .menu-button {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .topbar-right {
+    display: flex;
+    gap: 0.5rem;
+
+    button {
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+}
+
+.layout-content {
+  flex: 1;
+  padding: 2rem;
+}
+
+:host ::ng-deep {
+  .p-sidebar {
+    height: 100vh;
+    top: 0;
+
+    .p-sidebar-content {
+      padding: 0;
+    }
+  }
+
+  .p-panelmenu {
+    .p-panelmenu-header-link {
+      border-radius: 0;
+      border: none;
+
+      &:focus {
+        box-shadow: none;
+      }
+    }
+
+    .p-menuitem-link {
+      border-radius: 0;
+
+      &:focus {
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+.cms-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: $retro-bg;
+  color: $retro-text;
+  font-family: "VT323", "Courier New", monospace;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(transparent 50%, rgba(0, 0, 0, 0.05) 50%);
+    background-size: 100% 4px;
+    pointer-events: none;
+    z-index: 999;
+  }
+
+  &::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+      circle at center,
+      transparent 0,
+      rgba(0, 0, 0, 0.2) 100%
+    );
+    pointer-events: none;
+    z-index: 998;
+  }
+
+  &.sidebar-collapsed {
+    .cms-sidebar {
+      width: 60px;
+
+      .sidebar-header {
+        h1 {
+          display: none;
+        }
+      }
+
+      .sidebar-nav {
+        .nav-item {
+          padding: 0.75rem 0;
+          text-align: center;
+
+          span {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.cms-sidebar {
+  width: 250px;
+  background-color: $retro-sidebar;
+  border-right: 2px solid $retro-text;
+  padding: 1rem;
+  transition: width 0.3s ease;
+  box-shadow: 0 0 15px $retro-glow;
+
+  .sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid $retro-text;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+
+    h1 {
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      animation: textShadowPulse 2s infinite;
+    }
+
+    .toggle-btn {
+      background: none;
+      border: 1px solid $retro-text;
+      color: $retro-text;
+      padding: 5px 10px;
+      cursor: pointer;
+      font-family: "VT323", "Courier New", monospace;
+      transition: all 0.3s ease;
+      text-shadow: 0 0 5px $retro-glow;
+
+      &:hover {
+        background-color: $retro-hover;
+        box-shadow: 0 0 10px $retro-glow;
+        transform: scale(1.05);
+      }
+
+      &:active {
+        transform: scale(0.95);
+      }
+    }
+  }
+
+  .sidebar-nav {
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        margin-bottom: 0.5rem;
+      }
+
+      .nav-item {
+        display: flex;
+        align-items: center;
+        padding: 0.75rem 1rem;
+        color: $retro-text;
+        text-decoration: none;
+        border: 1px solid $retro-text;
+        transition: all 0.3s ease;
+        overflow: hidden;
+        white-space: nowrap;
+        position: relative;
+
+        &::before {
+          content: ">";
+          margin-right: 0.5rem;
+          flex-shrink: 0;
+        }
+
+        &:hover {
+          background-color: $retro-hover;
+          box-shadow: 0 0 10px $retro-glow;
+          transform: translateX(5px);
+          text-shadow: 0 0 5px $retro-glow;
+
+          &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+              90deg,
+              transparent,
+              rgba(51, 255, 0, 0.2),
+              transparent
+            );
+            animation: scanline 1s linear;
+          }
+        }
+      }
+    }
+  }
+}
+
+.cms-main {
+  flex: 1;
+  padding: 2rem;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: $retro-text;
+    box-shadow: 0 0 10px $retro-glow;
+    opacity: 0.5;
+  }
+
+  .main-header {
+    border-bottom: 2px solid $retro-text;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+
+    h2 {
+      font-size: 2rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      animation: textShadowPulse 2s infinite;
+    }
+  }
+
+  .content-area {
+    background-color: rgba($retro-accent, 0.3);
+    border: 1px solid $retro-text;
+    padding: 2rem;
+    border-radius: 4px;
+    box-shadow: 0 0 15px rgba($retro-text, 0.1);
+    backdrop-filter: blur(5px);
+  }
+}

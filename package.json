@@ -29,6 +29,7 @@
     "@tailwindcss/postcss": "^4.0.6",
     "express": "^4.18.2",
     "postcss": "^8.5.2",
+    "primeicons": "^7.0.0",
     "primeng": "^19.0.6",
     "rxjs": "~7.8.0",
     "tailwindcss": "^4.0.6",

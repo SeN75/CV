@@ -11,22 +11,4 @@ export type FirebaseObject = {
   updatedAt?: Date;
 };
 
-export type SystemConfig = FirebaseObject & {
-  title: string;
-  name: string;
-  keyswords: string[];
-  description: string;
-  logo: string;
-  theme: string;
-  email: string;
-  phone: string;
-  address: string;
-  colors: {
-    primary: string;
-    secondary: string;
-    accent: string;
-    background: string;
-    text: string;
-    muted: string;
-  };
-};
+export type AdditionalContent = Partial<FirebaseObject> & Record<string, any>;
