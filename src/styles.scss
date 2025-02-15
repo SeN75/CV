@@ -1,1 +1,6 @@
 @use "tailwindcss";
+
+@theme {
+  --primary: #000;
+  --secondary: #fff;
+}
