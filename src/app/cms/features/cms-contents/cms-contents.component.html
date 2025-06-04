@@ -1,74 +1,78 @@
 <div class="card">
   <p-table #dt1 [value]="customers" dataKey="id" [rows]="10" [rowsPerPageOptions]="[10, 25, 50]" [loading]="loading" [paginator]="true" [globalFilterFields]="['name', 'country.name', 'representative.name', 'status']">
-     <ng-template #caption>
-         <div class="flex">
-             <p-button label="Clear" [outlined]="true" icon="pi pi-filter-slash" (click)="clear(dt1)" />
-             <p-iconfield iconPosition="left" class="ml-auto">
-                 <p-inputicon>
-                     <i class="pi pi-search"></i>
-                 </p-inputicon>
-                 <input pInputText type="text" (input)="dt1.filterGlobal($event.target.value, 'contains')" placeholder="Search keyword" />
-             </p-iconfield>
-         </div>
-     </ng-template>
-     <ng-template #header>
-         <tr>
-          <th  style="min-width:15rem">
-            No.
-          </th>
-             <th style="min-width:15rem">
-                 <div class="flex items-center">
-                     title
-                     <p-columnFilter type="text" field="Title" display="menu" />
-                 </div>
-             </th>
-             <th style="min-width:15rem">
-                 <div class="flex items-center">
-                     descripiton
-                     <p-columnFilter type="text" field="descripiton" display="menu" />
-                 </div>
-             </th>
+    <ng-template #caption>
+      <div class="flex">
+        <p-button label="Clear" [outlined]="true" icon="pi pi-filter-slash" (click)="clear(dt1)" />
+        <p-iconfield iconPosition="left" class="ml-auto">
+          <p-inputicon>
+            <i class="pi pi-search"></i>
+          </p-inputicon>
+          <input pInputText type="text" (input)="dt1.filterGlobal($event.target.value, 'contains')" placeholder="Search keyword" />
+        </p-iconfield>
+      </div>
+    </ng-template>
+    <ng-template #header>
+      <tr>
+        <th  style="min-width:15rem">
+          No.
+        </th>
+        <th style="min-width:15rem">
+          <div class="flex items-center">
+            title
+            <p-columnFilter type="text" field="Title" display="menu" />
+          </div>
+        </th>
+        <th style="min-width:15rem">
+          <div class="flex items-center">
+            descripiton
+            <p-columnFilter type="text" field="descripiton" display="menu" />
+          </div>
+        </th>
 
-            
 
-             <th style="min-width:10rem">
-                 <div class="flex items-center">
-                     Activity
-                     <p-columnFilter field="activity" matchMode="between" display="menu" [showMatchModes]="false" [showOperator]="false" [showAddButton]="false">
-                         <ng-template #filter let-value let-filter="filterCallback">
-                             <p-slider [(ngModel)]="value" [range]="true" styleClass="m-4" (onSlideEnd)="filter($event.values)" />
-                             <div class="flex items-center px-2">
-                                 <span *ngIf="!value">0</span>
-                                 <span *ngIf="value">{{ value[0] }} - {{ value[1] }}</span>
-                             </div>
-                         </ng-template>
-                     </p-columnFilter>
-                 </div>
-             </th>
-             <th style="width: 3rem">
-                 <div class="flex items-center">
-                     Verified
-                     <p-columnFilter type="boolean" field="verified" display="menu" />
-                 </div>
-             </th>
-         </tr>
-     </ng-template>
-     <ng-template #body let-customer>
-         <tr>
-             <td>
-                 {{ customer.name }}
-             </td>
-             <td>
-              {{ customer.descripiton }}
 
-             </td>
-            
-         </tr>
-     </ng-template>
-     <ng-template #emptymessage>
-         <tr>
-             <td colspan="7">No customers found.</td>
-         </tr>
-     </ng-template>
- </p-table>
+        <th style="min-width:10rem">
+          <div class="flex items-center">
+            Activity
+            <p-columnFilter field="activity" matchMode="between" display="menu" [showMatchModes]="false" [showOperator]="false" [showAddButton]="false">
+              <ng-template #filter let-value let-filter="filterCallback">
+                <p-slider [(ngModel)]="value" [range]="true" styleClass="m-4" (onSlideEnd)="filter($event.values)" />
+                <div class="flex items-center px-2">
+                  @if (!value) {
+                    <span>0</span>
+                  }
+                  @if (value) {
+                    <span>{{ value[0] }} - {{ value[1] }}</span>
+                  }
+                </div>
+              </ng-template>
+            </p-columnFilter>
+          </div>
+        </th>
+        <th style="width: 3rem">
+          <div class="flex items-center">
+            Verified
+            <p-columnFilter type="boolean" field="verified" display="menu" />
+          </div>
+        </th>
+      </tr>
+    </ng-template>
+    <ng-template #body let-customer>
+      <tr>
+        <td>
+          {{ customer.name }}
+        </td>
+        <td>
+          {{ customer.descripiton }}
+
+        </td>
+
+      </tr>
+    </ng-template>
+    <ng-template #emptymessage>
+      <tr>
+        <td colspan="7">No customers found.</td>
+      </tr>
+    </ng-template>
+  </p-table>
 </div>
