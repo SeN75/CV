@@ -15,6 +15,20 @@ export const CmsShellRouting: Routes = [
             (m) => m.CmsComponent
           ),
       },
+      {
+        path: 'contents',
+        loadComponent: () =>
+          import('@/cms/features/cms-contents/cms-contents.component').then(
+            (c) => c.CmsContentsComponent
+          ),
+      },
+      {
+        path: 'resumes',
+        loadComponent: () =>
+          import('@/cms/features/cms-resumes/cms-resumes.component').then(
+            (c) => c.CmsResumesComponent
+          ),
+      },
     ],
   },
 ];
