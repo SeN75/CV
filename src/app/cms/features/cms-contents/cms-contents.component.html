@@ -1,48 +1,83 @@
 <div class="card">
-  <p-table #dt1 [value]="customers" dataKey="id" [rows]="10" [rowsPerPageOptions]="[10, 25, 50]" [loading]="loading" [paginator]="true" [globalFilterFields]="['name', 'country.name', 'representative.name', 'status']">
+  <p-table
+    #dt1
+    [value]="customers"
+    dataKey="id"
+    [rows]="10"
+    [rowsPerPageOptions]="[10, 25, 50]"
+    [loading]="loading"
+    [paginator]="true"
+    [globalFilterFields]="[
+      'name',
+      'country.name',
+      'representative.name',
+      'status'
+    ]"
+  >
     <ng-template #caption>
-      <div class="flex">
-        <p-button label="Clear" [outlined]="true" icon="pi pi-filter-slash" (click)="clear(dt1)" />
+      <div class="flex gap-4">
+        <p-button
+          label="Clear"
+          [outlined]="true"
+          icon="pi pi-filter-slash"
+          (click)="clear(dt1)"
+        />
+        <p-button label="Add" icon="pi pi-plus" />
+        <span class="flex-1"></span>
         <p-iconfield iconPosition="left" class="ml-auto">
           <p-inputicon>
             <i class="pi pi-search"></i>
           </p-inputicon>
-          <input pInputText type="text" (input)="dt1.filterGlobal($event.target.value, 'contains')" placeholder="Search keyword" />
+          <input
+            pInputText
+            type="text"
+            (input)="
+              dt1.filterGlobal($any($event.target).value ?? '', 'contains')
+            "
+            placeholder="Search keyword"
+          />
         </p-iconfield>
       </div>
     </ng-template>
     <ng-template #header>
       <tr>
-        <th  style="min-width:15rem">
-          No.
-        </th>
-        <th style="min-width:15rem">
+        <th style="min-width: 15rem">No.</th>
+        <th style="min-width: 15rem">
           <div class="flex items-center">
             title
             <p-columnFilter type="text" field="Title" display="menu" />
           </div>
         </th>
-        <th style="min-width:15rem">
+        <th style="min-width: 15rem">
           <div class="flex items-center">
             descripiton
             <p-columnFilter type="text" field="descripiton" display="menu" />
           </div>
         </th>
 
-
-
-        <th style="min-width:10rem">
+        <th style="min-width: 10rem">
           <div class="flex items-center">
             Activity
-            <p-columnFilter field="activity" matchMode="between" display="menu" [showMatchModes]="false" [showOperator]="false" [showAddButton]="false">
+            <p-columnFilter
+              field="activity"
+              matchMode="between"
+              display="menu"
+              [showMatchModes]="false"
+              [showOperator]="false"
+              [showAddButton]="false"
+            >
               <ng-template #filter let-value let-filter="filterCallback">
-                <p-slider [(ngModel)]="value" [range]="true" styleClass="m-4" (onSlideEnd)="filter($event.values)" />
+                <p-slider
+                  [ngModel]="value"
+                  (ngModelChange)="filter($event)"
+                  [range]="true"
+                  styleClass="m-4"
+                />
                 <div class="flex items-center px-2">
                   @if (!value) {
-                    <span>0</span>
-                  }
-                  @if (value) {
-                    <span>{{ value[0] }} - {{ value[1] }}</span>
+                  <span>0</span>
+                  } @if (value) {
+                  <span>{{ value[0] }} - {{ value[1] }}</span>
                   }
                 </div>
               </ng-template>
@@ -60,13 +95,20 @@
     <ng-template #body let-customer>
       <tr>
         <td>
-          {{ customer.name }}
+          {{ customer.id }}
+        </td>
+        <td>
+          {{ customer.title }}
         </td>
         <td>
           {{ customer.descripiton }}
-
         </td>
-
+        <td>
+          {{ customer.activity }}
+        </td>
+        <td>
+          {{ customer.activity }}
+        </td>
       </tr>
     </ng-template>
     <ng-template #emptymessage>

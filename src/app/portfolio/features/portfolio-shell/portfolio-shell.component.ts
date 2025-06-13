@@ -8,4 +8,4 @@ import { RouterOutlet } from '@angular/router';
   template: ` <router-outlet></router-outlet> `,
   styles: ``,
 })
-export class PortfolioComponent {}
+export class PortfolioShellComponent {}

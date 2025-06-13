@@ -1,0 +1,20 @@
+<section
+  class="bottom-0 left-0 right-0 h-24 bg-background absolute border-t-[5px] border-e-[10px] border-solid border-secondary flex items-center px-10"
+>
+  <div class="text-secondary text-2xl font-bold flex items-center">
+    <button class="retro-button">Start</button>
+    <div class="flex gap-4 ms-8">
+      @for (action of toolsbarsActions(); track action) {
+      <button class="retro-button !p-5">
+        <!-- icon -->
+      </button>
+      }
+    </div>
+  </div>
+  <div
+    class="clock text-secondary text-2xl select-none font-bold rtl:mr-auto ltr:ml-auto"
+  >
+    {{ hour() | number : "2.0-0" }}<span class="mx-1">:</span
+    >{{ minuts() | number : "2.0-0" }} {{ ampm() }}
+  </div>
+</section>

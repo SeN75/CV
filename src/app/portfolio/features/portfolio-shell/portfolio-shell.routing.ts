@@ -6,7 +6,7 @@ export const PortfolioShell: Routes = [
     loadComponent: () =>
       import(
         '@/portfolio/features/portfolio-shell/portfolio-shell.component'
-      ).then((m) => m.PortfolioComponent),
+      ).then((m) => m.PortfolioShellComponent),
     children: [
       {
         path: '',

@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-cms-resumes',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './cms-resumes.component.html',
-  styleUrl: './cms-resumes.component.scss'
+  styleUrl: './cms-resumes.component.scss',
 })
-export class CmsResumesComponent {
-
-}
+export class CmsResumesComponent {}

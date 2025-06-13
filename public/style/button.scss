@@ -1,0 +1,17 @@
+.retro-button {
+  @apply px-4 py-2 font-medium  border-2  text-primary select-none;
+  @apply cursor-pointer relative bg-background border-4 border-solid;
+  @apply border-t-secondary border-l-secondary;
+  @apply border-r-primary border-b-primary;
+  @apply before:content-[''] before:absolute before:inset-0 before:border-4  before:z-[2];
+  @apply before:border-t-accent before:border-l-accent before:border-r-text before:border-b-text;
+
+  &:hover {
+    @apply opacity-90;
+  }
+  &:active {
+    @apply border-t-primary border-l-primary;
+    @apply border-r-secondary border-b-secondary;
+    @apply before:border-t-text before:border-l-text before:border-r-accent before:border-b-accent;
+  }
+}

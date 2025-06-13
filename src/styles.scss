@@ -1,11 +1,16 @@
-@use "tailwindcss";
 @use "primeicons/primeicons.css";
+@use "tailwindcss" as *;
+@use "../public/style/button.scss";
+@import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
 
+* {
+  font-family: "Russo One", sans-serif;
+}
 @theme {
-  --primary: #023259;
-  --secondary: #66cc99;
-  --accent: #339966;
-  --background: #519391;
-  --text: #006666;
-  --muted: #339999;
+  --color-primary: #023259;
+  --color-secondary: #66cc99;
+  --color-accent: #339966;
+  --color-background: #519391;
+  --color-text: #006666;
+  --color-muted: #339999;
 }

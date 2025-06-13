@@ -22,17 +22,16 @@
     "@angular/platform-server": "^20.0.0",
     "@angular/router": "^20.0.0",
     "@angular/ssr": "^20.0.0",
-    "@ngrx/entity": "^19.0.1",
-    "@ngrx/signals": "^19.0.1",
-    "@ngrx/store": "^19.0.1",
+    "@ngrx/entity": "^19.2.1",
+    "@ngrx/signals": "^19.2.1",
+    "@ngrx/store": "^19.2.1",
     "@primeng/themes": "^19.0.6",
-    "@tailwindcss/postcss": "^4.0.6",
+    "@tailwindcss/postcss": "^4.1.10",
     "express": "^4.18.2",
-    "postcss": "^8.5.2",
     "primeicons": "^7.0.0",
     "primeng": "^19.0.6",
     "rxjs": "~7.8.0",
-    "tailwindcss": "^4.0.6",
+    "tailwindcss": "^4.1.10",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
   },
@@ -49,7 +48,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
-    "postcss": "^8.5.3",
+    "postcss": "^8.5.5",
     "typescript": "~5.8.3"
   }
 }

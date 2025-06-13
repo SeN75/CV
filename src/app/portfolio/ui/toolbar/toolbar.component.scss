@@ -1,0 +1,14 @@
+.clock {
+  & span {
+    animation: colne 1000ms infinite;
+  }
+}
+
+@keyframes colne {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
